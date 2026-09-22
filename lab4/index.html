@@ -5,11 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Анкета студента </title>
+  
 </head>
 
 <body>
-    <h1>Анкета студента </h1>
-    <form action="#" method="post" enctype="multipart/form-data">
+    <header>
+        <h1>Анкета студента</h1>
+    </header>
+<main>
+
+
+    <form action="." method="post" enctype="multipart/form-data">
 
         <h2>Персональна інформація</h2>
         <fieldset>
@@ -39,7 +45,7 @@
                 <label for="Дата народження">Дата народження:</label>
                 <input type="date" id="Дата народження" name="Дата народження">
             </p>
-<p>
+            <p>
                 <label for="Гендер">Гендер:</label><br>
                 <input type="radio" id="Гендер" name="gender" value="male">
                 <label for="Гендер">Чоловік</label><br>
@@ -86,7 +92,8 @@
             </p>
 
             <p> <label for="cs_interest">Оцініть ваш інтерес до Компьютерних Наук:</label>
-                <input type="range" id="cs_interest" name="cs_interest" min="0" max="100"> </p>
+                <input type="range" id="cs_interest" name="cs_interest" min="0" max="100">
+            </p>
         </fieldset>
 
         <br>
@@ -96,16 +103,21 @@
             <legend>Оцініть ваші навички</legend>
 
             <p> <label for="skills">Опишіть ваші навички:</label><br>
-                <textarea id="skills" name="skills" rows="5" cols="40" placeholder="Перерахуйте ваші навички тут..."></textarea>  </p>
+                <textarea id="skills" name="skills" rows="5" cols="40"
+                    placeholder="Перерахуйте ваші навички тут..."></textarea>
+            </p>
 
             <p> <label for="resume">Завантажити Резюме:</label>
-                <input type="file" id="resume" name="resume"> </p>
+                <input type="file"  id="resume" name="resume">
+            </p>
 
             <p> <label for="fav_color">Виберіть вибраный колір:</label>
-                <input type="color" id="fav_color" name="fav_color" value="#ff0000"> </p>
+                <input type="color" id="fav_color" name="fav_color" value="#ff0000">
+            </p>
 
             <p> <label for="study_time">Бажаний час навчання:</label>
-                <input type="time" id="study_time" name="study_time"> </p>
+                <input type="time" id="study_time" name="study_time">
+            </p>
         </fieldset>
 
         <br>
@@ -113,6 +125,7 @@
         <input type="submit" value="Submit Survey">
 
     </form>
+</main>
 </body>
 
 </html>
