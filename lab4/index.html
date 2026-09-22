@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анкета студента </title>
+</head>
+
+<body>
+    <h1>Анкета студента </h1>
+    <form action="#" method="post" enctype="multipart/form-data">
+
+        <h2>Персональна інформація</h2>
+        <fieldset>
+            <legend>Підтвердіть свої дані</legend>
+
+            <p>
+                <label for="Повне ім'я">Повне ім'я:</label>
+                <input type="text" id="Повне ім'я" name="Повне ім'я" placeholder="Введіть своє повне ім'я">
+            </p>
+
+            <p>
+                <label for="Емеіл">Email:</label>
+                <input type="email" id="Емеіл" name="Емеіл" placeholder="Введіть свою електронну пошту">
+            </p>
+
+            <p>
+                <label for="Пароль">Пароль:</label>
+                <input type="password" id="Пароль" name="Пароль" placeholder="Введіть пароль">
+            </p>
+
+            <p>
+                <label for="Вік">Вік:</label>
+                <input type="number" id="Вік" name="Вік">
+            </p>
+
+            <p>
+                <label for="Дата народження">Дата народження:</label>
+                <input type="date" id="Дата народження" name="Дата народження">
+            </p>
+<p>
+                <label for="Гендер">Гендер:</label><br>
+                <input type="radio" id="Гендер" name="gender" value="male">
+                <label for="Гендер">Чоловік</label><br>
+                <input type="radio" id="Гендер" name="gender" value="female">
+                <label for="Гендер">Жінка</label><br>
+                <input type="radio" id="Гендер" name="gender" value="other">
+                <label for="other">Інше</label>
+            </p>
+
+            <p>
+                <label for="Знання мов">Знання мов:</label><br>
+                <input type="checkbox" id="english" name="languages" value="english">
+                <label for="english">Англійська</label><br>
+                <input type="checkbox" id="spanish" name="languages" value="spanish">
+                <label for="spanish">Іспанська</label><br>
+                <input type="checkbox" id="french" name="languages" value="french">
+                <label for="french">Французька</label>
+            </p>
+
+            <p>
+                <label for="country">Країна:</label>
+                <select id="country" name="country">
+                    <option value="" disabled selected>Виберіть свою країну</option>
+                    <option value="ukraine">Україна</option>
+                    <option value="usa">США</option>
+                    <option value="uk">Велика Британія</option>
+                </select>
+            </p>
+        </fieldset>
+
+        <br>
+        <h2>Предмети в кооледжі</h2>
+        <fieldset>
+            <legend>Виберіть ваші предмети</legend>
+
+            <p> <label for="Предмети">Виберіть предмети:</label><br>
+                <select id="subjects" name="subjects" multiple size="4">
+                    <option value="mathematics">Математика</option>
+                    <option value="computer_science">Компьютерні Наук</option>
+                    <option value="physics">Фізика</option>
+                    <option value="chemistry">Хімія</option>
+                    <option value="english">Англійська</option>
+                </select>
+            </p>
+
+            <p> <label for="cs_interest">Оцініть ваш інтерес до Компьютерних Наук:</label>
+                <input type="range" id="cs_interest" name="cs_interest" min="0" max="100"> </p>
+        </fieldset>
+
+        <br>
+
+        <h2>Оцінка Навичок</h2>
+        <fieldset>
+            <legend>Оцініть ваші навички</legend>
+
+            <p> <label for="skills">Опишіть ваші навички:</label><br>
+                <textarea id="skills" name="skills" rows="5" cols="40" placeholder="Перерахуйте ваші навички тут..."></textarea>  </p>
+
+            <p> <label for="resume">Завантажити Резюме:</label>
+                <input type="file" id="resume" name="resume"> </p>
+
+            <p> <label for="fav_color">Виберіть вибраный колір:</label>
+                <input type="color" id="fav_color" name="fav_color" value="#ff0000"> </p>
+
+            <p> <label for="study_time">Бажаний час навчання:</label>
+                <input type="time" id="study_time" name="study_time"> </p>
+        </fieldset>
+
+        <br>
+
+        <input type="submit" value="Submit Survey">
+
+    </form>
+</body>
+
+</html>
