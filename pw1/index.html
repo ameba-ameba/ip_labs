@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Adventures Blog — Мої топ-3 міста світу</title>
+
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✈️</text></svg>">
+
+    <style>
+        body,
+        h1,
+        h2,
+        h3,
+        p,
+        ul,
+        li,
+        figure,
+        figcaption {
+            margin: 10px;
+            padding: 0;
+            list-style: none;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            font-size: 18px;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: #005A9C;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0 0 10px;
+        }
+
+        nav ul {
+            background: #333;
+            text-align: center;
+            padding: 10px 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: #ffd700;
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 1000px;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .city-cards {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .city-card {
+            flex: 1;
+            min-width: 250px;
+            border: 1px solid #ddd;
+            margin: 0;
+            background: #fafafa;
+        }
+
+        .city-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .city-card figcaption {
+            padding: 15px;
+            text-align: center;
+        }
+
+        #photo-gallery ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 0;
+        }
+
+        #photo-gallery li {
+            width: calc(33.333% - 20px);
+            margin: 10px;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        #photo-gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        #photo-gallery figcaption {
+            padding: 15px;
+            text-align: center;
+            font-style: italic;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        form input[type="text"],
+        form input[type="email"],
+        form textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            box-sizing: border-box;
+        }
+
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .checkbox-container input {
+            margin-right: 10px;
+        }
+
+        form button {
+            display: inline-block;
+            background: #005A9C;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background: #004080;
+        }
+
+
+        footer {
+            background: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer nav ul {
+            padding: 0;
+            list-style: none;
+            background: none;
+        }
+
+        footer nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        footer nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        footer .social-media {
+            margin: 15px 0;
+        }
+
+        footer .social-media a {
+            display: inline-block;
+            margin: 0 5px;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        footer p {
+            margin: 10px 0;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        /* Accessibility for Emojis */
+        .emoji {
+            font-style: normal;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Подорожі дружби: відкриваючи світ разом <span class="emoji" role="img" aria-label="Глобус">🌍</span></h1>
+        <p>Привіт, мандрівники! Ми — команда друзів, які понад усе люблять досліджувати нові куточки нашої планети.
+            Ласкаво просимо до нашого щоденника «Global Adventures Blog», де ми ділимося історіями про свої 3
+            найулюбленіші міста!</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#home" class="active">Головна</a></li>
+            <li><a href="#zhytomyr">Житомир</a></li>
+            <li><a href="#odesa">Одеса</a></li>
+            <li><a href="#ternopil">Тернопіль</a></li>
+            <li><a href="#gallery">Галерея</a></li>
+            <li><a href="#contact">Контакти</a></li>
+            <li><a href="#subscribe">Підписка</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <section id="home">
+            <h2>Наші найулюбленіші міські пригоди <span class="emoji" role="img" aria-label="Прапор України">🇺🇦</span>
+            </h2>
+            <p>У кожної з наших подорожей є своя історія та неповторна атмосфера. Нижче представлена наша головна трійка
+                міст, які залишили найяскравіші спогади у наших серцях:</p>
+
+            <div class="city-cards">
+                <figure class="city-card">
+                    <img src="data:image/jpeg;base64,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"
+                        alt="Підвісний міст у Житомирі">
+                    <figcaption>
+                        <h3>Житомир <span class="emoji" role="img" aria-label="Ракета">🚀</span></h3>
+                        <p>Місто зелених парків, глибоких каньйонів та космічної історії.</p>
+                    </figcaption>
+                </figure>
+
+                <figure class="city-card">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80"
+                        alt="Узбережжя Одеси">
+                    <figcaption>
+                        <h3>Одеса <span class="emoji" role="img" aria-label="Якір">⚓</span></h3>
+                        <p>Морська столиця гумору, сонячних пляжів та неповторних двориків.</p>
+                    </figcaption>
+                </figure>
+
+                <figure class="city-card">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80"
+                        alt="Тернопільський став">
+                    <figcaption>
+                        <h3>Тернопіль <span class="emoji" role="img" aria-label="Замок">🏰</span></h3>
+                        <p>Оаза затишку з величезним ставом у самому серці міста.</p>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <hr>
+
+        <article id="zhytomyr">
+            <section>
+                <header>
+                    <h2>Житомир: Космічні горизонти та зелені скелі <span class="emoji" role="img"
+                            aria-label="Ракета">🚀</span></h2>
+                </header>
+                <p>Житомир став для нас справжнім відкриттям! Ми очікували побачити тихе обласне містечко, а знайшли
+                    неймовірні скелясті пейзажі річки Тетерів та найкрутіший космічний музей.</p>
+
+                <h3>Визначні пам’ятки <span class="emoji" role="img" aria-label="Міст">Мистецтво</span></h3>
+                <p>Найбільше вразив Музей космонавтики ім. С. Корольова та підвісний міст у парку ім. Гагаріна, з якого
+                    відкривається захоплюючий краєвид на каньйон.</p>
+                <figure>
+                    <img src="data:image/jpeg;base64,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"
+                        alt="Житомирський підвісний міст через річку"
+                        style="width:100%; max-height:400px; object-fit:cover;">
+                    <figcaption>Знаменитий підвісний міст у Житомирі — улюблене місце для вечірніх прогулянок.
+                    </figcaption>
+                </figure>
+
+                <h3>Кухня та гастрономія <span class="emoji" role="img" aria-label="Деруни">🍲</span></h3>
+                <p>Тут ми скуштували найсмачніші автентичні поліські деруни із грибним соусом у глиняних горщиках.</p>
+
+                <h3>Культура та традиції</h3>
+                <p>Пішохідна вулиця Михайлівська зачаровує затишними кав'ярнями та вуличними музикантами, які грають
+                    щовечора.</p>
+
+                <h3>Особисті історії та віртуальна екскурсія</h3>
+                <p>Наш пікнік на скелі Голова Чацького під час заходу сонця — це момент, який запам'ятається на все
+                    життя!</p>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Віртуальна екскурсія Житомиром"
+                        allowfullscreen></iframe>
+                </div>
+            </section>
+        </article>
+
+        <hr>
+
+        <article id="odesa">
+            <section>
+                <header>
+                    <h2>Одеса: Морський бриз та колоритні пригоди <span class="emoji" role="img"
+                            aria-label="Якір">⚓</span></h2>
+                </header>
+                <p>Одеса зустріла нас солоним морським повітрям, гумором та неповторною архітектурою. Це місто, де кожен
+                    дворик має власну історію.</p>
+
+                <h3>Визначні пам’ятки</h3>
+                <p>Одеський театр опери та балету — архітектурне диво! А прогулянка Потьомкінськими сходами до
+                    Морвокзалу залишається обов'язковою програмою.</p>
+                <figure>
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80"
+                        alt="Узбережжя Чорного моря в Одесі" style="width:100%; max-height:400px; object-fit:cover;">
+                    <figcaption>Схід сонця на пляжі Ланжерон — найкращий початок одеського дня.</figcaption>
+                </figure>
+
+                <h3>Кухня та гастрономія <span class="emoji" role="img" aria-label="Риба">🐟</span></h3>
+                <p>Форшмак, свіжосмажена цаца та соковиті томати з Привозу — справжній гастрономічний рай для
+                    поціновувачів морепродуктів.</p>
+
+                <h3>Особисті враження</h3>
+                <p>Найкраще в Одесі — це заблукати в старих двориках Молдаванки та спілкуватися з місцевими жителями,
+                    які завжди раді поділитися жартом.</p>
+            </section>
+        </article>
+
+        <hr>
+
+        <article id="ternopil">
+            <section>
+                <header>
+                    <h2>Тернопіль: Затишок та спокій біля ставу <span class="emoji" role="img"
+                            aria-label="Замок">🏰</span></h2>
+                </header>
+                <p>Тернопіль підкорив нас своїм неспішним ритмом життя. Величезне озеро прямо в центрі міста створює
+                    особливу романтичну атмосферу.</p>
+
+                <h3>Пам'ятки та Тернопільський став <span class="emoji" role="img" aria-label="Човен">⛵</span></h3>
+                <p>Тернопільський став та Острів Закоханих — серце міста. Ми із задоволенням прокаталися на
+                    прогулянковому катері «Герой Танцоров».</p>
+                <figure>
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80"
+                        alt="Тернопільський став увечері" style="width:100%; max-height:400px; object-fit:cover;">
+                    <figcaption>Вечірні вогні Тернопільського ставу та затишна набережна.</figcaption>
+                </figure>
+
+                <h3>Культура та традиції <span class="emoji" role="img" aria-label="Кава">☕</span></h3>
+                <p>Галицька гостинність відчувається всюди — від невеликих кав'ярень із духмяною кавою до вуличних
+                    арт-фестивалів.</p>
+            </section>
+        </article>
+
+        <hr>
+
+        <section id="gallery">
+            <h2>Travel Gallery <span class="emoji" role="img" aria-label="Камера">📸</span></h2>
+            <p>Яскраві фрагменти та емоції з наших спільних мандрівок, зафіксовані на об'єктив фотоапарата:</p>
+
+            <div id="photo-gallery">
+                <ul>
+                    <li>
+                        <figure>
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRo6CKS6bguzHry5hCOymX42WFGakX6t1HXY8vPqFnPpQ&s=10"
+                                alt="Скелі та міст у Житомирі">
+                            <figcaption>Житомир: Вигляд на скелястий каньйон Тетерева з висоти мосту.</figcaption>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure>
+                            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=500&q=80"
+                                alt="Морський пейзаж Одеси">
+                            <figcaption>Одеса: Нескінченні хвилі Чорного моря та ранковий сонячний бриз.</figcaption>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure>
+                            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=500&q=80"
+                                alt="Тернопільське озеро">
+                            <figcaption>Тернопіль: Романтичний захід сонця над тихою гладдю ставу.</figcaption>
+                        </figure>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="contact">
+            <h2>Звяжіться з нами <span class="emoji" role="img" aria-label="Конверт">✉️</span></h2>
+            <p>Маєте запитання про наші маршрути або хочете порекомендувати цікаве місто? Напишіть нам!</p>
+
+            <form action="#" method="post">
+                <label for="contact-name">Ваше ім'я:</label>
+                <input type="text" id="contact-name" name="name" placeholder="Олександр" required>
+
+                <label for="contact-email">Електронна пошта:</label>
+                <input type="email" id="contact-email" name="email" placeholder="name@example.com" required>
+
+                <label for="contact-subject">Тема повідомлення:</label>
+                <input type="text" id="contact-subject" name="subject" placeholder="Порада щодо маршруту..." required>
+
+                <label for="contact-message">Ваше повідомлення:</label>
+                <textarea id="contact-message" name="message" rows="5"
+                    placeholder="Напишіть тут ваші враження чи запитання..." required></textarea>
+
+                <button type="submit">Надіслати повідомлення</button>
+            </form>
+        </section>
+
+        <hr>
+
+        <section id="subscribe">
+            <h2>Підписка на оновлення блогу <span class="emoji" role="img" aria-label="Дзвіночок">🔔</span></h2>
+            <p>Будьте в курсі всіх нових публікацій! Підписуйтесь на нашу розсилку та отримуйте нові огляди міст
+                першими.</p>
+
+            <form action="#" method="post">
+                <label for="sub-email">Ваш Email:</label>
+                <input type="email" id="sub-email" name="email" placeholder="your.email@gmail.com" required>
+
+                <div class="checkbox-container">
+                    <input type="checkbox" id="consent-check" name="consent" required>
+                    <label for="consent-check" style="display:inline; margin:0;">Я погоджуюся на отримання новин та
+                        оновлень блогу</label>
+                </div>
+
+                <button type="submit">Підписатися</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <div>
+            <nav>
+                <ul>
+                    <li><a href="#">Про нас</a></li>
+                    <li><a href="#">Політика конфіденційності</a></li>
+                    <li><a href="#">Умови використання</a></li>
+                </ul>
+            </nav>
+
+            <div class="social-media">
+                <a href="#" aria-label="Faceblock">Faceblock</a> |
+                <a href="#" aria-label="Tweety">Tweety</a> |
+                <a href="#" aria-label="Instadrama">Instadrama</a>
+            </div>
+
+            <p>Контактний Email: <a href="mailto:info@globaladventures.com">info@globaladventures.com</a></p>
+
+            <p>© 2026 Global Adventures Blog. Всі права захищено.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
