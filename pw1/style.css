@@ -2,7 +2,7 @@ body, h1, h2, h3, p, ul, li, figure, figcaption {
     margin: 10px;
     padding: 0;
     list-style: none;
-    font-family: 'Arial', sans-serif;
+    font-family: "Isometra", serif;
 }
 
 /* Body and Layout */
@@ -149,4 +149,8 @@ footer p {
 footer a {
     color: #fff;
     text-decoration: underline; /* Consider removing underline if using buttons for CTA */
+}
+
+footer .social-media a:hover {
+    color: #005A9C; /* Change color on hover for social media links */
 }
