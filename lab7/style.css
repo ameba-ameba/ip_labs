@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Roboto Condensed", Arial, sans-serif;
+  background: #fff;
+  color: #222;
+}
+
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; height: auto; }
+
+/* ЦЕНТРУВАННЯ: саме тут margin: 0 auto */
+.container {
+  width: 100%;
+  max-width: 1058px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+h2[align="center"] { text-align: center; font-size: 24px; font-weight: 400; margin: 0 0 28px; }
+h2[align="center"] a { text-decoration: underline; text-underline-offset: 6px; transition: color .3s; }
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===================== HEADER (Flexbox) ===================== */
+#events_container { background: #262671; color: #fff; padding: 12px 0 40px; }
+   #events_container h2[align="center"] a { color: #fff; }
+   #events_container h2[align="center"] a:hover { color: #9db8e8; }
+   
+#events_container .views-view-grid .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;      /* картки різної висоти */
+  gap: 16px;
+}
+#events_container .views-col {
+  display: block;
+  flex: 0 0 calc((100% - 48px) / 4);
+  opacity: 0;
+  animation: fadeInUp .6s ease forwards;
+  transition: transform .3s ease;
+}
+#events_container .views-col.col-2 { animation-delay: .08s; }
+#events_container .views-col.col-3 { animation-delay: .16s; }
+#events_container .views-col.col-4 { animation-delay: .24s; }
+#events_container .views-col.col-5 { animation-delay: .32s; }
+#events_container .views-col.col-6 { animation-delay: .40s; }
+#events_container .views-col:hover { transform: translateY(-5px); }
+
+#events_container .views-field,
+#events_container .field-content { display: block; }
+#events_container .field-content > a { display: block; background: #f5f5f5; }
+
+#events_container img { width: 100%; height: auto; }   /* без aspect-ratio */
+
+#events_container .event_date {
+  background: #fff;
+  color: #0a8fd0;
+  text-align: center;
+  font-size: 14px;
+  padding: 14px 16px;
+  border-bottom: 1px dotted #262671;
+}
+#events_container h3 {
+  margin: 0;
+  padding: 14px 14px 18px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #0a74a8;
+}
+
+/* ===================== MAIN: НОВИНИ (Grid) ===================== */
+.main-container { padding-top: 12px; padding-bottom: 48px; }
+.main-container h2[align="center"] a { color: #0a6fa6; }
+
+.main-container .views-view-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 27px;
+  align-items: start;           /* картки різної висоти */
+}
+.main-container .views-view-grid .row { display: contents; }
+
+.main-container .views-col {
+  background: #f5f5f5;
+  opacity: 0;
+  animation: fadeInUp .6s ease forwards;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.main-container .views-col:hover { transform: translateY(-6px); box-shadow: 0 10px 20px rgba(0,0,0,.18); }
+.main-container .views-col a { display: block; }   /* ВИДАЛІТЬ старе правило з span {height:100%} */
+
+.news_teaser { position: relative; }
+.news_teaser img { width: 100%; height: auto; }
+.news_teaser > span {
+  position: absolute;
+  left: 13px;
+  bottom: -9px;                 /* бейдж трохи виходить за картинку */
+  padding: 3px 8px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  color: #fff;
+  background: rgba(70, 70, 70, .85);
+}
+.main-container h3 {
+  margin: 0;
+  padding: 22px 13px 14px;
+  font-size: 18px;
+  line-height: 1.25;
+  font-weight: 700;
+  color: #0a6fa6;
+}
+.main-container .views-col:hover h3 { color: #064e78; }
+/* ===================== БРЕЙКПОІНТИ ===================== */
+/* Mobile: до 767px — 1 колонка */
+@media (max-width: 767px) {
+  #events_container .views-col { flex: 0 0 100%; }
+  .main-container .views-view-grid { grid-template-columns: 1fr; }
+}
+/* Tablet: 768–1023px — 2 колонки */
+@media (min-width: 768px) and (max-width: 1023px) {
+  #events_container .views-col { flex: 0 0 calc((100% - 16px) / 2); }
+  .main-container .views-view-grid { grid-template-columns: repeat(2, 1fr); }
+}
+/* Desktop: від 1024px — 4 колонки */
+@media (min-width: 1024px) {
+  #events_container .views-col { flex: 0 0 calc((100% - 48px) / 4); }
+  .main-container .views-view-grid { grid-template-columns: repeat(4, 1fr); }
+}
